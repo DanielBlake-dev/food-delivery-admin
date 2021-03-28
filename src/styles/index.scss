@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+
+// Base
+@import "./base/vars";
+@import "./base/buttons";
+@import "./base/input";
+
+// Partials
+@import "./partials/auth";
+@import "./partials/layout";
+@import "./partials/profile";
+@import "./partials/orders";
+@import "./partials/status";
+@import "./partials/resource";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Nunito";
+}

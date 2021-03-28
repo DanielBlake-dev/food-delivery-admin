@@ -1,0 +1,27 @@
+.delivery-status {
+  width: 180px;
+  padding: 6px 35px;
+  border-radius: 50px;
+
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  color: #ffffff;
+}
+
+.delivery-status.Delivering {
+  background-color: #27ae60;
+}
+
+.delivery-status.Completed {
+  background-color: #f2c94c;
+  color: $text;
+}
+
+.delivery-status.Failure {
+  background-color: $main;
+}
+.delivery-status.Waiting {
+  background-color: $gray;
+}

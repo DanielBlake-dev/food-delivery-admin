@@ -1,0 +1,140 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 340px;
+  margin-bottom: 24px;
+  label {
+    margin-bottom: 16px;
+    font-family: $nunito;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: $text;
+  }
+  .base {
+    padding: 14px 24px;
+    border: 1px solid #d3d3d3;
+    border-radius: 50px;
+    font-family: $nunito;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: $text;
+    &::placeholder {
+      font-family: $nunito;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      color: $gray;
+    }
+  }
+}
+
+.select.opened {
+  .select-button {
+    .icon {
+      transform: rotate(180deg);
+    }
+  }
+  .options {
+    z-index: 10;
+    opacity: 1;
+  }
+}
+.select {
+  position: relative;
+
+  &-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    .icon {
+      transition: all 0.25s ease;
+    }
+  }
+  .options {
+    width: 100%;
+    margin-top: 8px;
+    background: $main;
+    border-radius: 10px;
+    opacity: 0;
+    position: absolute;
+    z-index: -10;
+    .option {
+      font-family: $nunito;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      color: #ffffff;
+      padding: 18px 24px;
+      cursor: pointer;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: lighten($main, 5%);
+      }
+    }
+  }
+}
+
+.input-container.select-many {
+  .select-button.base {
+    border-radius: 20px;
+    max-height: 176px;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: $accent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $gray;
+    }
+
+    .select-button__content {
+      display: flex;
+      flex-wrap: wrap;
+      .select-tag {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 8px;
+        border-radius: 6px;
+        margin-bottom: 4px;
+        margin-right: 4px;
+        background-color: $main;
+        color: #fff;
+        .remove {
+          width: 12px;
+          height: 12px;
+          margin-left: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          &::before {
+            transform: rotate(45deg);
+          }
+          &::after {
+            transform: rotate(-45deg);
+          }
+          &:before,
+          &:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            border-radius: 1px;
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

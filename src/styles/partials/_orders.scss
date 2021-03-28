@@ -1,0 +1,95 @@
+.checkout__table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 42px;
+  .checkout__head {
+    th {
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 19px;
+      color: $gray;
+      text-align: left;
+      padding-bottom: 18px;
+    }
+  }
+  .checkout__body {
+    .count {
+      height: 80px;
+      display: flex;
+
+      align-items: center;
+    }
+    tr {
+      border-top: 1px solid $accent;
+      border-bottom: 1px solid $accent;
+    }
+    td {
+      padding: 22px 0;
+    }
+    .checkout-remove {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 1px solid $accent;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      &:hover {
+        background-color: $accent;
+        &:after,
+        &:before {
+          background-color: $gray;
+        }
+      }
+      &:after {
+        transform: rotate(45deg);
+      }
+      &:before {
+        transform: rotate(-45deg);
+      }
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 1px;
+        background-color: $accent;
+        border-radius: 1px;
+        transition: all 0.25s ease;
+      }
+    }
+    .checkout-dish {
+      display: flex;
+      align-items: center;
+      &__image {
+        margin-right: 12px;
+        width: 80px;
+        height: 80px;
+      }
+      .name {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+        color: $text;
+        margin-bottom: 4px;
+      }
+      .comment {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 16px;
+        color: $gray;
+      }
+    }
+    .checkout-price,
+    .checkout-total {
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 25px;
+      color: $text;
+    }
+  }
+}
